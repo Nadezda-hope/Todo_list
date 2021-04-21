@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <section class="todo">
+    <div class="todo__wrapper">
+      <header class="header">
+        <h1 class="header__title">Todo App</h1>
+      </header>
+      
+      <div class="add">
+        <input class="field add__field" type="text" placeholder="Add your new todo">
+        <button class="button add__button" type="button">+</button>
+      </div>
+
+      <div class="tasks">
+        <ul class="tasks__list">
+          <li class="tasks__item">
+            <label class="field tasks__label">
+              <input class="visually-hidden tasks__input" type="checkbox"> 
+              <span class="tasks__indicator"></span>
+              <span class="tasks__text">Buy a new gaming laptop</span>
+              <span class="tasks__trash"></span>
+            </label>
+          </li>
+
+          <li class="tasks__item">
+            <label class="field tasks__label">
+              <input class="visually-hidden tasks__input" type="checkbox"> 
+              <span class="tasks__indicator"></span>
+              <span class="tasks__text">Complete a previous task</span>
+              <span class="tasks__trash"></span>
+            </label>
+          </li>
+
+          <li class="tasks__item">
+            <label class="field tasks__label">
+              <input class="visually-hidden tasks__input" type="checkbox"> 
+              <span class="tasks__indicator"></span>
+              <span class="tasks__text">Create video for YouTube</span>
+              <span class="tasks__trash"></span>
+            </label>
+          </li>
+
+          <li class="tasks__item">
+            <label class="field tasks__label">
+              <input class="visually-hidden tasks__input" type="checkbox"> 
+              <span class="tasks__indicator"></span>
+              <span class="tasks__text">Create a new portfolio site</span>
+              <span class="tasks__trash"></span>
+            </label>
+          </li>
+
+        </ul>
+      </div>
+
+      <footer class="footer">
+        <p class="footer__text">You have <span class="footer__count">4</span> panding tasks</p>
+        <button class="button footer__button" type="reset">Clear All</button>
+      </footer>
+    </div>
+
+  </section>
+</body>
+</html>
