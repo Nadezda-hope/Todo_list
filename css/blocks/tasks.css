@@ -20,7 +20,7 @@
 }
 
 .tasks__input + .tasks__indicator::before {
-  content: url("/img/checkbox-off.svg");
+  content: url("./../../img/checkbox-off.svg");
   position: absolute;
   width: 30px;
   height: 27px;
@@ -29,7 +29,7 @@
 }
 
 .tasks__input:checked + .tasks__indicator::after {
-  content: url("/img/checkbox-on.svg");
+  content: url("./../../img/checkbox-on.svg");
   position: absolute;
   width: 24px;
   height: 16px;
@@ -44,7 +44,7 @@
   height: 20px;
   top: 10px;
   right: 10px;
-  background-image: url("/img/trash_icon_2.png");
+  background-image: url("./../../img/trash_icon_2.png");
   background-size: 20px 20px;
 }
 

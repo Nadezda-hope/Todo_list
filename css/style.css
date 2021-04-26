@@ -1,10 +1,10 @@
-@import "/css/blocks/common.css";
-@import "/css/blocks/todo.css";
-@import "/css/blocks/header.css";
-@import "/css/blocks/add.css";
-@import "/css/blocks/tasks.css";
-@import "/css/blocks/footer.css";
-@import "/css/blocks/button.css";
+@import "./blocks/common.css";
+@import "./blocks/todo.css";
+@import "./blocks/header.css";
+@import "./blocks/add.css";
+@import "./blocks/tasks.css";
+@import "./blocks/footer.css";
+@import "./blocks/button.css";
 
 /* latin-ext */
 @font-face {

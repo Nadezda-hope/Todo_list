@@ -7,7 +7,7 @@
   <title>To Do List</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
   <section class="todo">
@@ -17,7 +17,7 @@
       </header>
       
       <div class="add">
-        <input class="field add__field" type="text" placeholder="Add your new todo">
+        <input class="field add__field" id="add__field" type="text" placeholder="Add your new todo">
         <button class="button add__button" type="button">+</button>
       </div>
 
@@ -63,11 +63,12 @@
       </div>
 
       <footer class="footer">
-        <p class="footer__text">You have <span class="footer__count">4</span> panding tasks</p>
+        <p class="footer__text">You have <span class="footer__count">4</span> pending tasks</p>
         <button class="button footer__button" type="reset">Clear All</button>
       </footer>
     </div>
 
   </section>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>
