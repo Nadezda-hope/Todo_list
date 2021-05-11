@@ -10,13 +10,6 @@ const footerCount = document.querySelector('.footer__count');
 const clearButton = document.querySelector('.footer__clear-button');
 let editTarget = null;
 
-// редактирование:
-// можно кликнуть на текст
-// текст появится в строке добавления карточки
-// кнопка добавления сменит значек с плюса на галочку
-// редактируемая строка подсветится желтым (ДЗ)
-// при клике на кнопку с галочкой инпут станет пустым, значок сменится на плюс, строка заимеет новое значение и перестанет быть желтой
-
 function clearAll() {
   const items = document.querySelectorAll('.item');
 
@@ -53,9 +46,6 @@ document.addEventListener('click', evt => {
       addInput.value = evt.target.textContent;
       addButton.textContent = 'v';
       evt.target.style.backgroundColor = '#FFFACD';
-      // галочка
-      // раскрасить
-      // занчение в инпут
     }
   }
 });
@@ -77,10 +67,6 @@ function addTask(evt) {
     itemText.textContent = value;
     addButton.textContent = '+';
     itemText.style.backgroundColor = '#f7f7f7';
-    // заменить значение
-    // убрать раскраску
-    // заменить обратно на +
-    // занулить editTarget = null;
   } else {
     itemsContainer.appendChild(createTodo(value));
     changeCountOfTasks();
@@ -121,13 +107,4 @@ function changeCountOfTasks() {
   footerCount.textContent = itemLenght;
 }
 
-
-//
-
-// Бонус:
-// абстрагироваться, и создать универсальную функцию, которая на вход принимает текст, на выход дает карточку(в памяти JS)
-// удалить все начальные карточки из разметки
-// написать код, который на старте приложения добавит какие-то начальные карточки, которые будут описаны в массиве initialCards = ['card1', 'card2, 'card3']
-
-//
 
