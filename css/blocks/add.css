@@ -1,11 +1,14 @@
 .add {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
   margin-bottom: 20px;
 }
 
-.add__field {
+.add__form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;  
+}
+
+.add__input {
   flex-grow: 1;
   margin-right: 10px;
   padding-left: 10px;
@@ -13,7 +16,7 @@
   border-radius: 3px;
 }
 
-.add__field::placeholder {
+.add__input::placeholder {
   font-family: var(--main-font);
   font-size: 14px;
   color: var(--placeholder-grey);

@@ -1,0 +1,53 @@
+.item {
+  position: relative;
+}
+
+.item__text {
+  width: auto;
+  min-height: 40px;
+  margin-left: 40px;
+  padding-left: 10px;
+  line-height: 40px;
+  color: var(--placeholder-grey);
+  background-color: var(--field-grey);
+  border-radius: 3px;
+}
+
+.item__indicator::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 28px;
+  top: calc(50% - 14px);
+  left: 0;
+  background-image: url("./../../img/checkbox-off.svg");
+  background-repeat: no-repeat;
+}
+
+.item__indicator--checked {
+  position: absolute;
+  width: 24px;
+  height: 18px;
+  top: calc(50% - 7px);
+  left: 0;
+  background-image: url("./../../img/checkbox-on.svg");
+}
+
+.item__trash {
+  display: none;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  right: 10px;
+  background: transparent;
+  background-image: url("./../../img/trash_icon_2.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
+.item:hover .item__trash {
+  display: block;
+}

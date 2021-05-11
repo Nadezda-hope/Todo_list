@@ -10,63 +10,35 @@
   <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
-  <section class="todo">
-    <div class="todo__wrapper">
-      <header class="header">
-        <h1 class="header__title">Todo App</h1>
-      </header>
+  <section class="page">
+    <div class="page__wrapper">
+      <h1 class="page__title">Todo App</h1>
       
       <div class="add">
-        <input class="field add__field" id="add__field" type="text" placeholder="Add your new todo">
-        <button class="button add__button" type="button">+</button>
+        <form class="add__form" method="POST" action="#">
+          <input class="add__input" id="add__input" type="text" placeholder="Add your new todo">
+          <button class="button add__button" type="submit">+</button>
+        </form>        
       </div>
 
       <div class="tasks">
         <ul class="tasks__list">
-          <li class="tasks__item">
-            <label class="field tasks__label">
-              <input class="visually-hidden tasks__input" type="checkbox"> 
-              <span class="tasks__indicator"></span>
-              <span class="tasks__text">Buy a new gaming laptop</span>
-              <span class="tasks__trash"></span>
-            </label>
-          </li>
-
-          <li class="tasks__item">
-            <label class="field tasks__label">
-              <input class="visually-hidden tasks__input" type="checkbox"> 
-              <span class="tasks__indicator"></span>
-              <span class="tasks__text">Complete a previous task</span>
-              <span class="tasks__trash"></span>
-            </label>
-          </li>
-
-          <li class="tasks__item">
-            <label class="field tasks__label">
-              <input class="visually-hidden tasks__input" type="checkbox"> 
-              <span class="tasks__indicator"></span>
-              <span class="tasks__text">Create video for YouTube</span>
-              <span class="tasks__trash"></span>
-            </label>
-          </li>
-
-          <li class="tasks__item">
-            <label class="field tasks__label">
-              <input class="visually-hidden tasks__input" type="checkbox"> 
-              <span class="tasks__indicator"></span>
-              <span class="tasks__text">Create a new portfolio site</span>
-              <span class="tasks__trash"></span>
-            </label>
-          </li>
-
         </ul>
       </div>
 
       <footer class="footer">
         <p class="footer__text">You have <span class="footer__count">4</span> pending tasks</p>
-        <button class="button footer__button" type="reset">Clear All</button>
+        <button class="button footer__clear-button" type="reset">Clear All</button>
       </footer>
     </div>
+
+    <template id="template-task">
+      <li class="tasks__item item">
+        <p class="item__text"></p>
+        <span class="item__indicator"></span>
+        <button type="button" class="item__trash"></button>
+      </li>
+    </template>
 
   </section>
   <script src="./scripts/index.js"></script>
