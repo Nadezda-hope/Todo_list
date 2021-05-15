@@ -9,6 +9,7 @@ const templateTask = document.querySelector('#template-task').content.querySelec
 const footerCount = document.querySelector('.footer__count');
 const clearButton = document.querySelector('.footer__clear-button');
 let editTarget = null;
+const textFields = document.querySelectorAll('.item__text');
 
 function clearAll() {
   const items = document.querySelectorAll('.item');
@@ -43,9 +44,9 @@ document.addEventListener('click', evt => {
   if (evt.target.classList.contains('item__text')) {
     if (editTarget === null) {
       editTarget = evt.target;
-      addInput.value = evt.target.textContent;
-      addButton.textContent = 'v';
-      evt.target.style.backgroundColor = '#FFFACD';
+      addInput.value = editTarget.textContent;
+      addButton.textContent = 'V';
+      editTarget.style.backgroundColor = '#FFFACD';
     }
   }
 });
@@ -59,14 +60,14 @@ function createTodo(data) {
 
 function addTask(evt) {
   evt.preventDefault();
-  const itemText = document.querySelector('.item__text')
   let value = addInput.value;
 
+  
   if (editTarget) {
-    editTarget = null;
-    itemText.textContent = value;
+    editTarget.textContent = value;
     addButton.textContent = '+';
-    itemText.style.backgroundColor = '#f7f7f7';
+    editTarget.style.backgroundColor = '#f7f7f7';
+    editTarget = null;
   } else {
     itemsContainer.appendChild(createTodo(value));
     changeCountOfTasks();
