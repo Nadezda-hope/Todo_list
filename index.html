@@ -15,15 +15,15 @@
       <h1 class="page__title">Todo App</h1>
       
       <div class="add">
-        <form class="add__form" method="POST" action="#">
+        <form class="add__form" method="GET" action="#">
           <input class="add__input" id="add__input" type="text" placeholder="Add your new todo">
           <button class="button add__button" type="submit">+</button>
-        </form>        
+        </form> 
       </div>
 
       <div class="tasks">
-        <ul class="tasks__list">
-        </ul>
+        <!-- <ul class="tasks__list">
+        </ul> -->
       </div>
 
       <footer class="footer">
@@ -40,6 +40,18 @@
       </li>
     </template>
 
+    <template id="template-form">
+      <form class="add__form" method="GET" action="#">
+        <input class="add__input" id="add__input" type="text" placeholder="Add your new todo">
+        <button class="button add__button" type="submit">+</button>
+      </form> 
+    </template>
+
+    <div class="popup popup--closed">
+      <ul class="tasks__list">        
+      </ul>
+      <button class="popup__close"></button>
+    </div>
   </section>
   <script src="./scripts/index.js"></script>
 </body>

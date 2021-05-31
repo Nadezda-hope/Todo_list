@@ -13,24 +13,26 @@
   border-radius: 3px;
 }
 
+.item__text--active {
+  background-color: #FFFACD;
+}
+
 .item__indicator::before {
-  content: "";
+  content: url("./../../img/checkbox-off.svg");
   position: absolute;
   width: 30px;
   height: 28px;
   top: calc(50% - 14px);
   left: 0;
-  background-image: url("./../../img/checkbox-off.svg");
-  background-repeat: no-repeat;
 }
 
-.item__indicator--checked {
+.item__indicator--active::after {
+  content: url("./../../img/checkbox-on.svg");
   position: absolute;
   width: 24px;
   height: 18px;
-  top: calc(50% - 7px);
-  left: 0;
-  background-image: url("./../../img/checkbox-on.svg");
+  top: calc(50% - 12px);
+  left: 4px;
 }
 
 .item__trash {
