@@ -43,15 +43,13 @@ class TodoList {
   }
 };
 
-// dataCards.forEach(str => {
-//   const todo = new Todo(str);
-//   const container = new TodoList();
-//   const todoElement = todo.render();
-//   container.addTodo(todoElement);
-//   container.countTodo();
-// });
-  
-
+dataCards.forEach(str => {
+  const todo = new Todo(str);
+  const container = new TodoList();
+  const todoElement = todo.render();
+  container.addTodo(todoElement);
+  container.countTodo();
+});
 
 class AddForm {
   constructor() {
@@ -64,14 +62,9 @@ class AddForm {
     this.formElement = this.templateElement.cloneNode(true);
     this.addInputElement = this.formElement.querySelector('.add__input');
     this.addButtonElement = this.formElement.querySelector('.add__button');  
-    this.formContainer = document.querySelector('.add');
-  }
-  
-  render() {
-    this.formContainer.append(this.formElement);
   }
 
-  getElement() {
+  render() {
     return this.formElement;
   }
 
@@ -93,32 +86,30 @@ class AddForm {
   }
 };
 
-// const container = new TodoList();
 const newForm = new AddForm();
-// newForm.render();
+const formContainer = new TodoList();
 
-// newForm.whatToDoOnAdd((todoText) => {
-//   const todo = new Todo(todoText).render();
-//   container.addTodo(todo);    
-// });
+document.querySelector('.add').append(newForm.render());
 
+newForm.whatToDoOnAdd((todoText) => {
+  const todo = new Todo(todoText).render();
+  formContainer.addTodo(todo);    
+});
+  
 class Popup {
   constructor() {
     this._popupContetElement = document.querySelector('.popup');
     this._containerElement = document.querySelector('.popup__content');
     this.closeButton = document.querySelector('.popup__close');
+    this.tasksList = document.querySelector('.tasks__list').children;
     this._handlerCloseButton();
   }
-
+  
   _setContent(content) { 
     this._containerElement.innerHTML = '';
     this._containerElement.append(content);
   }
-
-  renderList(func) {
-    this.renderFn = func;
-  }
-
+  
   open(content) {
     this._popupContetElement.classList.remove('popup--closed');
     this._setContent(content);
@@ -127,26 +118,83 @@ class Popup {
   _handlerCloseButton() {
     this.closeButton.addEventListener('click', () => {
       this._popupContetElement.classList.add('popup--closed');
+    });
+
+    this._popupContetElement.addEventListener('click', (evt) => {
+      if (evt.target.classList.contains('popup') && !evt.target.classList.contains('popup__window')) {
+        this._popupContetElement.classList.add('popup--closed');
+      }
+    })
+    
+    window.addEventListener('keydown', (evt) => {
+      if (evt.code === 'Escape') {
+        this._popupContetElement.classList.add('popup--closed');
+      }
     })
   }
-
+  
   close() {
     this._popupContetElement.classList.add('popup--closed');
   }
 }
+  
+class EditForm {
+  constructor() {
+    this._prepareElements();
+    this._makeEventListeners();
+  }
+  
+  _prepareElements() {
+    this.templateElement = document.querySelector('#template-form').content.querySelector('.add__form');  
+    this.formElement = this.templateElement.cloneNode(true);
+    this.addInputElement = this.formElement.querySelector('.add__input');
+    this.addButtonElement = this.formElement.querySelector('.add__button');  
+    this.addButtonElement.textContent = 'v';
+  }
 
+  setText(text) {
+    this.addInputElement.value = text;
+  }
+
+  render() {
+    return this.formElement;
+  }
+
+  _makeEventListeners() {
+    this.formElement.addEventListener('submit', (e) => this._handleSubmit(e));
+  }
+  
+  _handleSubmit(e) {
+    e.preventDefault();
+    const value = this.addInputElement.value;
+    if (this.doOnAdd) {
+      this.doOnAdd(value);
+    }
+    this.addInputElement.value = '';
+  }
+
+  whatToDoOnSubmit(fn) {
+    this.doOnAdd = fn;
+  }
+}
+
+const tasksList = document.querySelector('.tasks__list');
 const popup = new Popup();
 
-addButton.addEventListener('click', () => {
-  popup.open(newForm.getElement());
-})
-// popup.renderList((value) => {
-//   const popupEl = new Todo(value).render();
-//   container.addTodo(popupEl);
-// });
+tasksList.addEventListener('click', evt => {
+  if (evt.target.classList.contains('item__edit')) {
+    const editForm = new EditForm();
+    const itemText = evt.target.previousElementSibling;
+    editForm.setText(itemText.textContent);
+    popup.open(editForm.render());
 
-// в классе формы сделать метод render, который будет создавать и возвращать разметку формы
-// использовать этот метод, чтобы отрендерить форму(из html её убрать)
+    editForm.whatToDoOnSubmit((value) => {
+      itemText.textContent = value;
+      popup.close();
+    })
+  }
+});
+
 
 
 

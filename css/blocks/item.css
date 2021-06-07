@@ -43,13 +43,29 @@
   top: 0;
   right: 10px;
   background: transparent;
-  background-image: url("./../../img/trash_icon_2.png");
-  background-size: 20px 20px;
+  background-image: url("./../../img/icon-trash.png");
+  background-size: 30px 27px;
   background-repeat: no-repeat;
   background-position: center;
   border: none;
 }
 
-.item:hover .item__trash {
+.item__edit {
+  display: none;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  right: 38px;
+  background: transparent;
+  background-image: url("./../../img/pencil-icon2.png");
+  background-size: 17px 17px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
+.item:hover .item__trash,
+.item:hover .item__edit {
   display: block;
 }
