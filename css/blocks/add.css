@@ -23,8 +23,34 @@
 }
 
 .add__button {
+  position: relative;
   width: 40px;
   font-size: 36px;
   line-height: 40px;
   font-weight: 300;
+}
+
+.add__button::before {
+  content: "+";
+  position: absolute;
+  /* width: 30px;
+  height: 30px; */
+  top: 1px;
+  left: 9px;
+}
+
+.add__button--edit {
+  position: relative;
+  background-color: transparent !important;
+}
+
+.add__button--edit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background-image: url('./../../img/free-icon-checkmark-2749292.png');
+  background-size: 40px 40px;
 }
