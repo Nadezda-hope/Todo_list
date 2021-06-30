@@ -8,8 +8,8 @@
   margin-left: 40px;
   padding-left: 10px;
   line-height: 40px;
-  color: var(--placeholder-grey);
-  background-color: var(--field-grey);
+  color: var(--placeholder);
+  background-color: var(--fieldset);
   border-radius: 3px;
 }
 

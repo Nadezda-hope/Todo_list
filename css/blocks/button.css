@@ -1,7 +1,7 @@
 .button {
   height: 40px;
   color: #fff;
-  background-color: var(--purple-button);
+  background-color: var(--buttons);
   outline: none;
   border: none;
   border-radius: 3px;

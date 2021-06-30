@@ -12,14 +12,14 @@
   flex-grow: 1;
   margin-right: 10px;
   padding-left: 10px;
-  border: 1px solid var(--placeholder-grey);
+  border: 1px solid var(--placeholder);
   border-radius: 3px;
 }
 
 .add__input::placeholder {
   font-family: var(--main-font);
   font-size: 14px;
-  color: var(--placeholder-grey);
+  color: var(--placeholder);
 }
 
 .add__button {

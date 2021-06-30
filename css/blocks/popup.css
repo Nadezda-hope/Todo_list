@@ -29,7 +29,7 @@
     height: 30px;
     border-radius: 50%;
     border: none;
-    background-color: var(--purple-button);
+    background-color: var(--buttons);
     cursor: pointer;
 }
 

@@ -1,8 +1,8 @@
 :root {
   --main-font: 'Montserrat','Arial', sans-serif;
-  --purple-button: #be19fa;
-  --field-grey: #f7f7f7; 
-  --placeholder-grey: #969696;
+  --buttons: #be19fa;
+  --fieldset: #f7f7f7; 
+  --placeholder: #969696;
   --main-bg: #F5F2ED;
 }
 
